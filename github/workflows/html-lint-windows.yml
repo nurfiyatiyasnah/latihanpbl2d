@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  pull request:
+  pull_request:
 
 jobs:
   lint:
@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-      uses: actions/checkout@v4
-      
+        uses: actions/checkout@v4
+
       - name: Install HTMLHint
-      run: npm install -g htmlhint
-      
+        run: npm install -g htmlhint
+
       - name: Periksa HTML
-      run: htmlhint " ** / *. html"
+        run: htmlhint "**/*.html"
